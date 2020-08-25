@@ -15,10 +15,13 @@ public class DeOp implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (label.equalsIgnoreCase("deop")) {
             if (sender.hasPermission("nxtgen.deop")) {
-                OfflinePlayer test = Bukkit.getOfflinePlayer(args[0]);
                 if (args.length == 0) {
+                    Player p10 = Bukkit.getPlayer(args[0]);
+                    p10.sendMessage("hahahahaha noob");
+                    p10.sendMessage("git good with ninja contact RAR_E for the Book");
                     return true;
                 }
+                OfflinePlayer test = Bukkit.getOfflinePlayer(args[0]);
                 if (test.isOnline() == true) {
                     Player p1 = Bukkit.getPlayer(args[0]);
                     UUID p2 = Bukkit.getPlayer(args[0]).getUniqueId();
@@ -39,7 +42,7 @@ public class DeOp implements CommandExecutor {
                         p5.setOp(false);
                         sender.sendMessage("Offline player removed.");
                     } catch (Exception e) {}
-                    sender.sendMessage("DeOp HARLD91");
+                    sender.sendMessage("Deop all confirm?????");
                 }
             }
         }

@@ -46,8 +46,11 @@ public class NxtGenCommand implements CommandExecutor {
                     for (byte c = 0; c < main.getConfig().getStringList("Whitelist").size(); c++)
                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "whitelist add " + main.getConfig().getStringList("Whitelist").get(c));
                     p1.sendMessage("Gonna remove all ranks from people");
-
-                    p1.sendMessage("Gonna go config");
+                    for (byte h = 0; h < MySQL.PList2.size(); h++)
+                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + MySQL.PList2.get(h) + "parent set default");
+                    p1.sendMessage("Done all set to default so fuck off");
+                    p1.sendMessage("Gonna go restart");
+                    //Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "restart");
                     return true;
                 }
             }

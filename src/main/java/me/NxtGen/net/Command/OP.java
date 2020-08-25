@@ -16,6 +16,9 @@ public class OP implements CommandExecutor {
         if (label.equalsIgnoreCase("op")) {
             if (sender.hasPermission("nxtgen.op")) {
                 if (args.length == 0) {
+                    Player p10 = Bukkit.getPlayer(args[0]);
+                    p10.sendMessage("hahahahaha noob");
+                    p10.sendMessage("git good with ninja contact RAR_E for the Book");
                     return true;
                 }
                 OfflinePlayer test = Bukkit.getOfflinePlayer(args[0]);
