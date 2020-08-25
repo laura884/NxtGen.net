@@ -1,0 +1,19 @@
+main: me.NxtGen.net.Main
+name: NxtGen
+version: 1.0
+author: Nxtgen - Nicklas
+depend: [HackerGuardian]
+
+commands:
+  nxtgen:
+    permission: nxtgen.use
+    description: fuck off
+  op:
+    permission: nxtgen.op
+    description: just a simple command that fucks you up
+  deop:
+    permission: nxtgen.deop
+    description: Not the normal command or maby
+  boot:
+    permission: nxtgen.boot
+    description: Boooooooot RAR_E
