@@ -1,9 +1,6 @@
 package me.NxtGen.net;
 
-import me.NxtGen.net.Command.Boot;
-import me.NxtGen.net.Command.DeOp;
-import me.NxtGen.net.Command.NxtGenCommand;
-import me.NxtGen.net.Command.OP;
+import me.NxtGen.net.Command.*;
 import me.NxtGen.net.Listener.liss;
 
 import org.bukkit.configuration.file.FileConfiguration;
@@ -33,6 +30,7 @@ public class Main extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new liss(), this);
         getCommand("op").setExecutor(new OP());
         getCommand("deop").setExecutor(new DeOp());
+        getCommand("NPJ").setExecutor(new NewPlayercommand());
         getConfig().options().copyDefaults();
         saveDefaultConfig();
 

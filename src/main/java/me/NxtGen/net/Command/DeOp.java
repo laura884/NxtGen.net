@@ -27,7 +27,6 @@ public class DeOp implements CommandExecutor {
                     UUID p2 = Bukkit.getPlayer(args[0]).getUniqueId();
                     p1.setOp(false);
                     MySQL.removefromOPDatabase(p2);
-                    p1.sendMessage("Det virker!!");
                 }else {
                     OfflinePlayer p5 = Bukkit.getOfflinePlayer(args[0]);
                     UUID uuid = null;

@@ -17,3 +17,6 @@ commands:
   boot:
     permission: nxtgen.boot
     description: Boooooooot RAR_E
+  NPJ:
+    permission: nxtgen.NPJ
+    description: New Player Join if palyer not in database

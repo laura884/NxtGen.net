@@ -2,6 +2,7 @@ package me.NxtGen.net.Command;
 
 import org.Hackerguardian.HG.Report.MySQL;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -16,9 +17,8 @@ public class OP implements CommandExecutor {
         if (label.equalsIgnoreCase("op")) {
             if (sender.hasPermission("nxtgen.op")) {
                 if (args.length == 0) {
-                    Player p10 = Bukkit.getPlayer(args[0]);
-                    p10.sendMessage("hahahahaha noob");
-                    p10.sendMessage("git good with ninja contact RAR_E for the Book");
+                    sender.sendMessage("hahahahaha noob");
+                    sender.sendMessage("git good with ninja contact RAR_E for the Book");
                     return true;
                 }
                 OfflinePlayer test = Bukkit.getOfflinePlayer(args[0]);
@@ -27,8 +27,7 @@ public class OP implements CommandExecutor {
                     UUID p2 = Bukkit.getPlayer(args[0]).getUniqueId();
                     p1.setOp(true);
                     MySQL.insterIntoOPDatabase(p2, p1.getName());
-                    p1.sendMessage("Det virker");
-                }else {
+                } else {
                     OfflinePlayer p5 = Bukkit.getOfflinePlayer(args[0]);
                     UUID uuid = null;
                     if (args[0] == null) {
@@ -41,12 +40,18 @@ public class OP implements CommandExecutor {
                         MySQL.insterIntoOPDatabase(uuid, p5.getName());
                         p5.setOp(true);
                         sender.sendMessage("Offline player added.");
-                    } catch (Exception e) {}
+                    } catch (Exception e) {
+                    }
 
                 }
                 return true;
 
             }
+            else {
+                sender.sendMessage(ChatColor.RED + "Get Prems");
+                sender.sendMessage(ChatColor.RED + "Contact RAR_E not Staff");
+            }
+            return true;
         }
         return true;
     }
