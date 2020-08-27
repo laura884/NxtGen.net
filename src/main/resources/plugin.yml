@@ -17,6 +17,10 @@ commands:
   boot:
     permission: nxtgen.boot
     description: Boooooooot RAR_E
-  NPJ:
-    permission: nxtgen.NPJ
+  npj:
+    permission: nxtgen.npj
     description: New Player Join if palyer not in database
+  nxtgenreload:
+    permission: nxtgen.reload
+    description: Reload nxtgen config
+    aliases: ngr

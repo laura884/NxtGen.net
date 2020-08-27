@@ -24,25 +24,24 @@ public class Boot implements CommandExecutor{
                 //player
                 Player p1 = (Player) sender;
                 if (p1.hasPermission("nxtgen.boot")) {
-                    p1.sendMessage(ChatColor.GOLD + "RUNNING NOW SETTING BACK THE SERVER SO ALL STAFF HAVE THERE RANKS ");
+                    p1.sendMessage(main.prefix + ChatColor.GOLD + "RUNNING NOW SETTING BACK THE SERVER SO ALL STAFF HAVE THERE RANKS ");
                     p1.setWhitelisted(true); //set player on whitelist
                     //p1.setWhitelisted(false); //remove player from whitelist
-                    p1.sendMessage(p1 + "whitelist");
+                    //p1.sendMessage(main.prefix + p1 + "whitelist");
                     //Bukkit.setWhitelist(true); //enable whitelist
                     Bukkit.setWhitelist(false); //disable whitelist
                     //Bukkit.reloadWhitelist(); //reload whitelist
-                    p1.sendMessage(ChatColor.GOLD + "WHITELIST OFF ");
-                    p1.sendMessage("OP STAFF");
+                    p1.sendMessage(main.prefix + ChatColor.GOLD + "WHITELIST OFF ");
+                    p1.sendMessage(main.prefix + "OP STAFF");
                     //not use
                     //p1.performCommand("/op" + main.getConfig().getStringList("Names") ); )
 
                     for (byte b = 0; b < main.getConfig().getStringList("Names").size(); b++)
                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "op " + main.getConfig().getStringList("Names").get(b));
-                    p1.sendMessage("WHITLISTING REMOVEING PLAYER");
-                    Set<OfflinePlayer> p2 = Bukkit.getWhitelistedPlayers();
-                    p2.clear();
-
-                    p1.sendMessage("ADDING STAFF RANKS BACK");
+                    p1.sendMessage(main.prefix + "WHITLISTING REMOVEING PLAYER");
+                    for (byte b1 = 0; b1 < main.getConfig().getStringList("Names").size(); b1++)
+                        Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "whitelist remove " + main.getConfig().getStringList("Names").get(b1));
+                    p1.sendMessage(main.prefix + "ADDING STAFF RANKS BACK");
                     for (byte c = 0; c < main.getConfig().getStringList("Owner").size(); c++)
                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + main.getConfig().getStringList("Owner").get(c) + " parent set owner");
                     for (byte d = 0; d < main.getConfig().getStringList("Dev").size(); d++)

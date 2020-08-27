@@ -24,21 +24,22 @@ public class NxtGenCommand implements CommandExecutor {
                 Player p1 = (Player) sender;
                 //Withlistedplayers
                 if (p1.hasPermission("nxtgen.use")) {
-                    p1.sendMessage(ChatColor.GOLD + "RUNNING SAFE PROGRAM YOU CANT STOP IT! ");
+                    p1.sendMessage(main.prefix + ChatColor.GOLD + "RUNNING SAFE PROGRAM YOU CANT STOP IT! ");
 
                     Bukkit.setWhitelist(true); //enable whitelist
-                    p1.sendMessage(ChatColor.GOLD + "WHITELIST ON ");
-                    p1.sendMessage("DEOP ALL");
+                    p1.sendMessage(main.prefix + ChatColor.GOLD + "WHITELIST ON ");
+                    p1.sendMessage(main.prefix + "DEOP ALL");
                     MySQL.getallfromOPDatabase();
+                    MySQL.getallfromPlistDatabase();
                     for (byte b = 0; b < MySQL.oplist2.size(); b++)
                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "deop " + MySQL.oplist2.get(b));
-                    p1.sendMessage("WHITLISTING STAFF");
+                    p1.sendMessage(main.prefix + "WHITLISTING STAFF");
                     for (byte c = 0; c < main.getConfig().getStringList("Whitelist").size(); c++)
                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "whitelist add " + main.getConfig().getStringList("Whitelist").get(c));
-                    p1.sendMessage("REMOVE RANKS");
+                    p1.sendMessage(main.prefix + "REMOVE RANKS");
                     for (byte h = 0; h < MySQL.PList2.size(); h++)
-                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + MySQL.PList2.get(h) + "parent set default");
-                    p1.sendMessage("ALL SET TO DEFAULT");
+                         Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "lp user " + MySQL.PList2.get(h) + " parent set default");
+                    p1.sendMessage(main.prefix + "ALL SET TO DEFAULT");
                     //p1.sendMessage("RESTARTING");
                     //Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "restart");
                     return true;
@@ -48,7 +49,7 @@ public class NxtGenCommand implements CommandExecutor {
         }
         else {
             //console
-            sender.sendMessage("hey console");
+            sender.sendMessage(main.prefix + "hey console");
             return true;
         }
         return false;

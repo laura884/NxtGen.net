@@ -9,7 +9,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 
-public class liss extends JavaPlugin implements Listener {
+public class liss implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         Bukkit.broadcastMessage("Hello, " + event.getPlayer().getName() + "!");
     }
