@@ -18,7 +18,7 @@ public class NxtGenCommand implements CommandExecutor {
     Main main = JavaPlugin.getPlugin(Main.class);
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (label.equalsIgnoreCase("nxtgen")) {
+        if (cmd.getName().equalsIgnoreCase("nxtgen")) {
             if (sender instanceof Player) {
                 //player
                 Player p1 = (Player) sender;

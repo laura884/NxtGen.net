@@ -24,3 +24,5 @@ commands:
     permission: nxtgen.reload
     description: Reload nxtgen config
     aliases: ngr
+  discord:
+    description: Nxtgen discord server

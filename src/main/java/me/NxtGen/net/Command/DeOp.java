@@ -15,7 +15,7 @@ import java.util.UUID;
 public class DeOp implements CommandExecutor {
     Main main = JavaPlugin.getPlugin(Main.class);
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (label.equalsIgnoreCase("deop")) {
+        if (cmd.getName().equalsIgnoreCase("deop")) {
             if (sender.hasPermission("nxtgen.deop")) {
                 if (args.length == 0) {
                     Player p10 = Bukkit.getPlayer(args[0]);

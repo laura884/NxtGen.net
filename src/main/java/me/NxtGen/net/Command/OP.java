@@ -17,7 +17,7 @@ public class OP implements CommandExecutor {
     String simple = null;
     Main main = JavaPlugin.getPlugin(Main.class);
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (label.equalsIgnoreCase("op")) {
+        if (cmd.getName().equalsIgnoreCase("op")) {
             if (sender.hasPermission("nxtgen.op")) {
                 if (args.length == 0) {
                     sender.sendMessage(main.prefix + "hahahahaha noob");

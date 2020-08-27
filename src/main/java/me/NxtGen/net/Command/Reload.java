@@ -13,7 +13,7 @@ public class Reload implements CommandExecutor {
     Main main = JavaPlugin.getPlugin(Main.class);
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (label.equalsIgnoreCase("nxtgenreload")) {
+        if (cmd.getName().equalsIgnoreCase("nxtgenreload")) {
             if (sender.hasPermission("nxtgen.reload")) {
                 if (args.length == 0) {
                     main.reloadConfig();

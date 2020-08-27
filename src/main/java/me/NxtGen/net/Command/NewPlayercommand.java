@@ -11,7 +11,7 @@ import java.util.UUID;
 
 public class NewPlayercommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (label.equalsIgnoreCase("npj")) {
+        if (cmd.getName().equalsIgnoreCase("npj")) {
             if (sender.hasPermission("nxtgen.npj")) {
                 if (args.length == 0) {
                     return true;

@@ -18,7 +18,7 @@ public class Boot implements CommandExecutor{
 
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (label.equalsIgnoreCase("boot")) {
+        if (cmd.getName().equalsIgnoreCase("boot")) {
             if (sender instanceof Player) {
 
                 //player
